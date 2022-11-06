@@ -15,9 +15,12 @@ class XylophoneApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: SafeArea(
-          child: Column(children: [
-            TextButton(
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            new Expanded(
+                child: TextButton(
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.red)),
@@ -25,8 +28,9 @@ class XylophoneApp extends StatelessWidget {
                 playAudio(1);
               },
               child: Text(''),
-            ),
-            TextButton(
+            )),
+            new Expanded(
+                child: TextButton(
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.orange)),
@@ -34,26 +38,31 @@ class XylophoneApp extends StatelessWidget {
                 playAudio(2);
               },
               child: Text(''),
+            )),
+            new Expanded(
+              child: TextButton(
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.yellow)),
+                onPressed: () {
+                  playAudio(3);
+                },
+                child: Text(''),
+              ),
             ),
-            TextButton(
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.yellow)),
-              onPressed: () {
-                player.play('note3.wav');
-              },
-              child: Text(''),
+            new Expanded(
+              child: TextButton(
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.green)),
+                onPressed: () {
+                  playAudio(4);
+                },
+                child: Text(''),
+              ),
             ),
-            TextButton(
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.green)),
-              onPressed: () {
-                player.play('note4.wav');
-              },
-              child: Text(''),
-            ),
-            TextButton(
+            new Expanded(
+                child: TextButton(
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.teal)),
@@ -61,8 +70,9 @@ class XylophoneApp extends StatelessWidget {
                 playAudio(5);
               },
               child: Text(''),
-            ),
-            TextButton(
+            )),
+            new Expanded(
+                child: TextButton(
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.blue)),
@@ -70,15 +80,17 @@ class XylophoneApp extends StatelessWidget {
                 playAudio(6);
               },
               child: Text(''),
-            ),
-            TextButton(
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.purple)),
-              onPressed: () {
-                player.play('note7.wav');
-              },
-              child: Text(''),
+            )),
+            new Expanded(
+              child: TextButton(
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.purple)),
+                onPressed: () {
+                  playAudio(7);
+                },
+                child: Text(''),
+              ),
             ),
           ]),
         ),
