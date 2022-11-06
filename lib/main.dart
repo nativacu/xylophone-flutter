@@ -7,6 +7,10 @@ void main() => runApp(XylophoneApp());
 class XylophoneApp extends StatelessWidget {
   static AudioCache player = AudioCache();
 
+  void playAudio(int fileSuffix) {
+    player.play('note$fileSuffix.wav');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +22,7 @@ class XylophoneApp extends StatelessWidget {
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.red)),
               onPressed: () {
-                player.play('note1.wav');
+                playAudio(1);
               },
               child: Text(''),
             ),
@@ -27,7 +31,7 @@ class XylophoneApp extends StatelessWidget {
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.orange)),
               onPressed: () {
-                player.play('note2.wav');
+                playAudio(2);
               },
               child: Text(''),
             ),
@@ -54,7 +58,7 @@ class XylophoneApp extends StatelessWidget {
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.teal)),
               onPressed: () {
-                player.play('note5.wav');
+                playAudio(5);
               },
               child: Text(''),
             ),
@@ -63,7 +67,7 @@ class XylophoneApp extends StatelessWidget {
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.blue)),
               onPressed: () {
-                player.play('note6.wav');
+                playAudio(6);
               },
               child: Text(''),
             ),
